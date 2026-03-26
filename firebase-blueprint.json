@@ -1,0 +1,77 @@
+{
+  "entities": {
+    "Service": {
+      "title": "Service",
+      "description": "Prestation proposée par le salon",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "category": { "type": "string" }
+      },
+      "required": ["name", "description", "category"]
+    },
+    "Price": {
+      "title": "Tarif",
+      "description": "Prix d'une prestation",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "price": { "type": "number" },
+        "category": { "type": "string" }
+      },
+      "required": ["name", "price", "category"]
+    },
+    "GalleryImage": {
+      "title": "Image Galerie",
+      "description": "Photo des réalisations du salon",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" }
+      },
+      "required": ["imageUrl", "category"]
+    },
+    "SalonSettings": {
+      "title": "Paramètres Salon",
+      "description": "Informations de contact et horaires",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "whatsapp": { "type": "string" },
+        "address": { "type": "string" },
+        "email": { "type": "string" },
+        "hours": { "type": "object" },
+        "description": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/services/{serviceId}": {
+      "schema": "Service",
+      "description": "Liste des services"
+    },
+    "/pricing/{priceId}": {
+      "schema": "Price",
+      "description": "Liste des tarifs"
+    },
+    "/gallery/{imageId}": {
+      "schema": "GalleryImage",
+      "description": "Photos de la galerie"
+    },
+    "/settings/salon": {
+      "schema": "SalonSettings",
+      "description": "Informations générales du salon"
+    },
+    "/users/{userId}": {
+      "schema": "object",
+      "description": "Profils utilisateurs (admin)"
+    }
+  }
+}

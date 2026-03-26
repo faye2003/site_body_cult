@@ -1,0 +1,5 @@
+{
+  "name": "Salon de Beauté Saly",
+  "description": "Site vitrine professionnel pour un salon de beauté à Saly avec espace d'administration.",
+  "requestFramePermissions": ["geolocation"]
+}
